@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Tarea_01__Listado_Estudiantes_.Models.Profesores>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listado de Profesores</h1>
+<br />
+<br />
+
+<div class="col col-12 table-responsive">
+    <table style="margin-top= 15px; " class="table table-light table-striped table-hover ">
+        <thead style="background-color:#143259; color:white;">
+            <tr>
+                <th>Cédula</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Género</th>
+                <th>Asignatura</th>
+
+            </tr>
+        </thead>
+        <tbody background-color:#F2F2F2;">
+            @foreach (var prof in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => prof.Cedula)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => prof.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => prof.Apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => prof.Genero)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => prof.Asignatura)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Eliminar", "Eliminar_Profesor", new { Cedula = prof.Cedula })
+                    </td>
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+    <div>
+        <p>
+            <button type="button" class="btn btn-success"><a class="text-decoration-none" style="color:white;" asp-action="Agregar_Profesor">Agregar Maestro</a></button>
+            
+        </p>
+
+    </div>
+</div>

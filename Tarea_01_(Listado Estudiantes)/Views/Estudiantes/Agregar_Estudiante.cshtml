@@ -1,0 +1,39 @@
+﻿@model Tarea_01__Listado_Estudiantes_.Models.Estudiantes
+
+@{
+    ViewData["Title"] = "Agregar Estudiantes";
+}
+
+<h1>Agregar Estudiantes</h1>
+
+<h6>Complete los siguientes campos para agregar un nuevo estudiante.</h6>
+
+<br />
+<br />
+
+<div>
+    <form action="Agregar_Estudiante" method="post" class="justify-content-center">
+        <div class="form-group">
+            <label>Matrícula</label>
+            <input class="form-control" name="Matricula" placeholder="Matrícula">
+            <small>Campo obligatorio</small>
+        </div>
+        <div class="form-group">
+            <label>Nombre</label>
+            <input class="form-control" name="Nombre" placeholder="Nombre">
+        </div>
+        <div class="form-group">
+            <label>Apellido</label>
+            <input class="form-control" name="Apellido" placeholder="Apellido">
+        </div>
+        <div class="form-group">
+            <label>Género</label>
+            <input class="form-control" name="Genero" placeholder="Género">
+        </div>
+        <div class="d-flex">
+            <input id="Submit1" type="submit" value="Hecho" class="btn bg-success " />
+            <button type="button" style="margin-left: 10px;" class="btn btn-info align-content-md-around"><a style="color:white;" asp-action="Index">Volver</a></button>
+
+        </div>
+    </form>
+</div>

@@ -1,0 +1,52 @@
+﻿
+    @model IEnumerable<Tarea_01__Listado_Estudiantes_.Models.Estudiantes>
+    @{
+        ViewData["Title"] = "Listado de Estudiantes";
+    }
+
+    <h1>Listado de Estudiantes</h1>
+    <br />
+    <br />
+
+    <div class="col col-12 table-responsive">
+        <table style="margin-top= 15px; " class="table table-light table-striped table-hover ">
+            <thead style="background-color:#143259; color:white;">
+                <tr>
+                    <th>Matrícula</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Género</th>
+
+                </tr>
+            </thead>
+            <tbody background-color:#F2F2F2;">
+                @foreach (var est in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => est.Matricula)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => est.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => est.Apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => est.Genero)
+                    </td>
+
+                </tr>
+                }
+
+            </tbody>
+
+        </table>
+        <div>
+            <p>
+                <button asp-action="Agregar_Estudiante"  type="button" class="btn btn-success"><a class="text-decoration-none" style="color:white;" asp-action="Agregar_Estudiante">Agregar Estudiante</a></button>
+                
+            </p>
+            
+        </div>
+    </div>
